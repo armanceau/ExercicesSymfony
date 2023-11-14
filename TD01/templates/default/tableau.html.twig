@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <div>
+        <h1>Voici le tableau!</h1>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Âge</th>
+                <th>Régime alimentaire</th>
+            </tr>
+            
+            {% for player in players %}
+                <tr>
+                    <td>{{ player.nom }}</td>
+                    <td>{{ player.prenom }}</td>
+                    <td>{{ player.age ~ " ans"}}</td>
+                    <td>
+                        {% if player.vegetarien %}
+                            🥦
+                        {% else %}
+                            🍖
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+    </div>
+</div>
+{% endblock %}

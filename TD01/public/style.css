@@ -22,3 +22,23 @@ body{
 .sf-toolbar{
     background: #e0f4fc;
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    background-color: #2E2E2E;
+    color: #e0f4fc;
+}
