@@ -16,7 +16,7 @@ class DefaultController extends AbstractController
         ]);
     }
 
-    #[Route('/hello/{name}', name: 'app_hello')]
+    #[Route('/name/{name?world}', name: 'app_hello')]
     public function hello(string $name): Response
     {
         return $this->render('default/hello.html.twig', [
@@ -24,17 +24,20 @@ class DefaultController extends AbstractController
         ]);
     }
 
-    #[Route('/age/{age}', name: 'app_age')]
+    #[Route('/age/{age?18}', name: 'app_age')]
     public function age(int $age): Response
     {
         if($age >= 18){
             $query = "Bravo, vous être majeur! 🥳";
+            $queryLink = "adulte";
         }
         else{
             $query = "Ah mince, vous êtes trop jeune ... 😟";
+            $queryLink = "enfant";
         }
         return $this->render('default/age.html.twig', [
             'query' => $query,
+            'queryLink' => $queryLink,
         ]);
     }
 }
